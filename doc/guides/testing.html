@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE — ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: docs/can-guides/topics/testing.md
+	@page guides/testing
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CanJS - Testing</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+		<link rel="stylesheet" type="text/css" href="../static/bundles/bit-docs-site/static.css">
+		<link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/docs/images/canjs_favicon.ico">
+		<link rel="apple-touch-icon" sizes="57x57" href="../../docs/images/canjs_favicon_57x57.png">
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="../../docs/images/canjs_favicon_57x57.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="../../docs/images/canjs_favicon_72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="../../docs/images/canjs_favicon_114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="../../docs/images/canjs_favicon_128x128.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="../../docs/images/canjs_favicon_144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="../../docs/images/canjs_favicon_152x152.png">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+	  	<meta name="apple-mobile-web-app-status-bar-style" content="white-translucent">
+	
+	
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-2302003-11', 'auto');
+			ga('send', 'pageview');
+		</script>
+	
+</head>
+	<body>
+		<input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+		<label for="nav-trigger">Menu</label>
+	  	<div id="everything">
+  <div id="left" class="column">
+    <div class="top-left">
+      
+          <div class="brand">
+	<div class="logo">
+		<a href="../../index.html" alt="CanJS"></a>
+		<div class="dropdown project-dropdown">
+			<a href="https://donejs.com/">DoneJS</a>
+			<a href="https://stealjs.com/">StealJS</a>
+			<a href="https://jquerypp.com/">jQuery++</a>
+			<a href="https://funcunit.com/">FuncUnit</a>
+			<a href="https://documentjs.com/">DocumentJS</a>
+		</div>
+	</div>
+	<div class="version">
+		<div class="version-number">
+			5.7.0
+		</div>
+		<div class="dropdown version-dropdown">
+			
+				<a href="https://v4.canjs.com">4.3.0</a>
+			
+				<a href="https://v3.canjs.com">3.13.1</a>
+			
+				<a href="https://v2.canjs.com">2.3.35</a>
+			
+		</div>
+	</div>
+</div>
+<div class="search-bar">
+	<div class="search-wrap" style="display:none;">
+		<span class="search-icon"></span>
+		<input
+			type="text"
+			size="6"
+			class="search"
+			placeholder="Search"
+			autocomplete="off"
+			autocorrect="off"
+			autocapitalize="none"
+			spellcheck="false"/>
+			<span class="search-icon-cancel"></span>
+	</div>
+</div>
+
+
+      
+    </div>
+    <div class="bottom">
+      <div class="nav-menu">
+        <div class="social-side-container">
+          <ul class="social-side">
+  <li>
+    <a class="header-mobile github" href="https://github.com/canjs/canjs" target="_blank"><img class="social-icon-small" src="../../docs/images/github.png">Github</a>
+  </li>
+  <li>
+    <a class="header-mobile twitter" href="https://twitter.com/canjs" target="_blank"><img class="social-icon-small" src="../../docs/images/twitter.png">Twitter</a>
+  </li>
+</ul>
+<ul class="social-side">
+  <li>
+    <a class="header-mobile" href="https://gitter.im/canjs/canjs" target="_blank">Chat</a>
+  </li>
+  <li>
+    <a class="header-mobile" href="http://forums.donejs.com/c/canjs" target="_blank">Forum</a>
+  </li>
+</ul>
+
+        </div>
+        
+            
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../about.html"
+							title="Learn about CanJS’s mission, technical highlights, who uses CanJS, and our future roadmap.">
+							About
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						parent
+           						expanded">
+						<a class="page"
+							href="../guides.html"
+							title="Welcome to CanJS! These guides are here to help you master CanJS development, get involved with the CanJS community,
+and contribute back to CanJS.">
+							Guides
+						</a>
+						
+	<ul>
+		
+			
+				
+					<li>
+						<span>essentials</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="setup.html"
+							title="Learn how to install CanJS in your environment.">
+							Setting Up CanJS
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="technology-overview.html"
+							title="Learn the basics of CanJS’s technology.">
+							Technology Overview
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="html.html"
+							title="Learn how to update HTML and listen to user interactions.">
+							HTML
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="routing.html"
+							title="Learn how to make your application respond to changes in the URL and work with the browser’s back and forward buttons.">
+							Routing
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="data.html"
+							title="Learn how to get, create, update, and delete backend service layer data.">
+							Service Layer
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="debugging.html"
+							title="Learn how to debug CanJS applications.">
+							Debugging
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="forms.html"
+							title="Learn how to create amazing &lt;form&gt;s with CanJS.">
+							Forms
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="current
+           						
+           						expanded">
+						<a class="page"
+							href="testing.html"
+							title="Learn how to test CanJS applications.">
+							Testing
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="logic.html"
+							title="Learn how to write observables in an organized, maintainable, and testable way.">
+							Logic
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						parent
+           						">
+						<a class="page"
+							href="recipes.html"
+							title="A listing of small examples that are useful for learning CanJS.">
+							recipes
+						</a>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="recipes/canvas-clock.html"
+							title="This guide walks you through building a clock with the Canvas API.">
+							Canvas Clock (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="recipes/credit-card-advanced.html"
+							title="This guide walks through building a simple credit card payment form with validations. It doesn’t use
+can-define. Instead it uses Kefir.js streams to make a ViewModel.
+can-kefir is used to make the Kefir streams observable to can-stache.">
+							Credit Card Guide (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="recipes/credit-card-simple.html"
+							title="This guide walks through building a very simple credit card payment form.  It uses Stripe.js v2 API to create a token
+which can be used to create a charge.  It also performs
+simple validation on the payment form values.">
+							Credit Card Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="recipes/cta-bus-map.html"
+							title="This guide walks you through showing Chicago Transit Authority (CTA) bus locations on a Google Map.">
+							CTA Bus Map (Medium)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="recipes/file-navigator-advanced.html"
+							title="This guide walks you through building a file navigation widget that requests data with fetch. It takes about 45 minutes to complete.">
+							File Navigator Guide (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="recipes/file-navigator-simple.html"
+							title="This guide walks you through building a simple file navigation widget.  It takes about 25 minutes to complete.  It was written with
+CanJS 3.10. Check out the file-navigator-advanced
+for an example that makes AJAX requests for its data and uses can-component.">
+							File Navigator Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="recipes/modals.html"
+							title="This guide shows how to create a multiple modal form.">
+							Multiple Modals (Medium)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="recipes/playlist-editor.html"
+							title="Learn how to use YouTube’s API to search for videos and make a playlist.  This makes authenticated requests with OAuth2. It uses jQuery++ for
+drag/drop events. It shows using custom attributes and custom events.  This guide takes
+an hour to complete.">
+							Playlist Editor (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="recipes/search-list-details.html"
+							title="This guide walks through building a Search, List, Details flow with lazy-loaded routes.">
+							Search, List, Details (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="recipes/signup-simple.html"
+							title="This guide walks through building simple signup, login forms and a logout button.">
+							Signup and Login (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="recipes/text-editor.html"
+							title="This guide walks you through building a basic rich text editor.">
+							Text Editor (Medium)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="recipes/tinder-carousel.html"
+							title="This guide walks you through building a Tinder-like carousel. Learn how to build apps that use dragging user interactions.">
+							Tinder Carousel (Medium)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="recipes/todomvc-with-steal.html"
+							title="This tutorial walks through building TodoMVC with StealJS. It includes KeyNote presentations
+covering CanJS core libraries.">
+							TodoMVC with StealJS
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="recipes/video-player.html"
+							title="This guide walks you through building custom video controls around a video element.">
+							Video Player (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="recipes/weather-report-advanced.html"
+							title="This guides you through extending the Simple Weather Report Guide to remove imperative code and automatically look up the user’s location using the
+browser’s geolocation API.  Both of these will be done with event streams.
+This guide continues where the Simple Weather Report Guide left off.  It takes about 25 minutes to complete.  It was written with CanJS 4.1.">
+							Weather Report Guide (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="recipes/weather-report-simple.html"
+							title="This guide walks you through building a simple weather report widget.  It takes about 25 minutes to complete.  It was written with
+CanJS 4.1.">
+							Weather Report Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li>
+						<span>app guides</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="chat.html"
+							title="This guide will walk you through building a real-time chat application with CanJS’s Core libraries.  It takes about 30 minutes to complete.">
+							Chat Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="todomvc.html"
+							title="This guide will walk you through building a slightly modified version of TodoMVC with CanJS’s Core libraries and can-fixture. It takes about 1 hour to complete.">
+							TodoMVC Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="atm.html"
+							title="This guide will walk you through building and testing an Automated Teller Machine (ATM) application with CanJS’s
+Core libraries.  You’ll learn how to do test driven development (TDD)
+and manage complex state.  It takes about 2 hours to complete.">
+							ATM Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li>
+						<span>upgrade</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../migrate-3.html"
+							title="This guide walks you through the step-by-step process to upgrade a 2.x app to CanJS 3.">
+							Migrating to CanJS 3
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../migrate-4.html"
+							title="This guide walks you through the step-by-step process to upgrade a 3.x app to CanJS 4.">
+							Migrating to CanJS 4
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../migrate-5.html"
+							title="This guide walks you through the process to upgrade a 4.x app to CanJS 5.x.">
+							Migrating to CanJS 5
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="upgrade/using-codemods.html"
+							title="Learn how to migrate your app to CanJS 3 using can-migrate.">
+							Using Codemods
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li>
+						<span>other</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="api.html"
+							title="This page walks through how to use and understand CanJS’s API documentation.">
+							Reading the Docs (API Guide)
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../api.html"
+							title="Welcome to the CanJS API documentation! This page is a CHEAT-SHEET for the most common APIs within CanJS. Read the
+technology-overview page for background on the following APIs.">
+							API Docs
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../community.html"
+							title="Get involved with one of the most inviting communities on the internet!">
+							Community
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="contribute.html"
+							title="Learn how to contribute to CanJS!">
+							Contributing
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+        
+      </div>
+      <div class="search-results-container">
+	<div class="search-results-wrap"></div>
+</div>
+
+    </div>
+  </div>
+  <div id="right" class="column">
+    <div class="top-right">
+      <div class="top-right-top">
+	<ul class="top-right-bitovi">
+	  	<li class="dropdown">
+	    	<a href="https://www.bitovi.com" class="bitovi icon-bits">Bitovi</a>
+	    	<ul class="dropdown-menu">
+	      		<li><a href="https://www.bitovi.com/">Bitovi.com</a></li>
+	      		<li><a href="https://www.bitovi.com/blog">Blog</a></li>
+	      		<li><a href="https://www.bitovi.com/design">Design</a></li>
+	      		<li><a href="https://www.bitovi.com/development">Development</a></li>
+	      		<li><a href="https://www.bitovi.com/training">Training</a></li>
+	      		<li><a href="https://www.bitovi.com/open-source">Open Source</a></li>
+	      		<li><a href="https://www.bitovi.com/about">About</a></li>
+	      		<li><a href="https://www.bitovi.com/contact">Contact Us</a></li>
+	    	</ul>
+	  	</li>
+	</ul>
+	<div class="brand">
+		<div class="logo">
+			<a href="../../index.html" alt="CanJS"></a>
+		</div>
+	</div>
+	<ul class="top-right-links">
+  <li>
+    <a href="https://gitter.im/canjs/canjs">Chat</a>
+  </li>
+  <li>
+    <a href="http://forums.donejs.com/c/canjs">Forum</a>
+  </li>
+  <li>
+    <a class="github-button nav-social" href="https://github.com/canjs/canjs" data-count-href="/canjs/canjs/stargazers" data-show-count="true">Star</a>
+  </li>
+  <li>
+    <a href="https://twitter.com/canjs" class="twitter-follow-button nav-social" data-show-count="true" data-show-screen-name="false">Follow @canjs</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </li>
+</ul>
+</div>
+<div class="breadcrumb">
+	
+		<li><a href="../../index.html">CanJS</a></li>
+		<li> / </li>
+	
+		<li><a href="../guides.html">Guides</a></li>
+		<li> / </li>
+	
+	
+	<li><a href="testing.html">Testing</a></li>
+	
+	<li class="breadcrumb-dropdown-separator"> / </li>
+	<li class="breadcrumb-dropdown breadcrumb-on-this-page">
+		<a> On this page</a>
+		<ul class="on-this-page"></ul>
+	</li>
+	<div class="nav-toggle" title="Back to top"></div>
+</div>
+
+
+    </div>
+    <div class="bottom">
+      <article>
+  <section class="title">
+	<div class="page-type">
+		<h1>Testing</h1>
+			<ul class="title-social">
+				
+				
+				<li>
+					<a class="button-link" href="//github.com/canjs/canjs/edit/master/docs/can-guides/topics/testing.md">Edit on GitHub</a>
+				</li>
+				
+			</ul>
+	</div>
+	<div class="clear-both"></div>
+	
+  
+	<section class="description">
+    <p>Learn how to test CanJS applications.</p>
+
+</section>
+
+  
+	
+</section>
+<section class="on-this-page-table">
+	<!--<h2 class="on-this-page-title" data-skip>Page Content</h2>-->
+</section>
+
+
+
+
+
+
+
+
+
+
+  
+    <section class="body">
+    <blockquote>
+<p>NOTE: This guide is a work in progress. New sections will be added as they are completed. Find an issue or have a topic you want covered? Add it to <a href="https://github.com/canjs/canjs/issues/3862">the issue</a>.</p>
+</blockquote>
+<p>This guide will show how to set up and write tests for different pieces of CanJS applications. It will also show techniques that can be used to test things that would otherwise be difficult to test. Not all of these techniques will be needed for every application.</p>
+<p>This guide does not focus on how to write applications in a maintainable, testable way. That is covered in the <a href="logic.html" title="Learn how to write observables in an organized, maintainable, and testable way.">Logic Guide</a>.</p>
+<blockquote>
+<p>NOTE: All of the examples in this guide use the <a href="https://mochajs.org/">Mocha</a> test framework and <a href="http://www.chaijs.com/">Chai</a> assertion library, but none of the examples are specific to Mocha/Chai and should work with any setup.</p>
+</blockquote>
+<h2>ViewModels</h2>
+<p>ViewModels contain a majority of the logic in CanJS applications so it is very important that they are well-tested. Since CanJS ViewModels act mostly like normal JavaScript objects, testing them usually works just like working with normal objects &mdash; set a property (or call a function) then check the value of other properties. This setup is shown below, followed by a few techniques for making it easier to test more complex ViewModels.</p>
+<h3>Basic setup</h3>
+<p>The basic setup for testing a ViewModel is:</p>
+<ol>
+<li>Create an instance of the ViewModel</li>
+<li>Test values of the ViewModel’s default values</li>
+<li>Set ViewModel properties (or call ViewModel functions)</li>
+<li>Test values of the ViewModel’s properties</li>
+<li>Repeat 3 &amp; 4</li>
+</ol>
+<pre><code class="language-html">&lt;div id=&quot;mocha&quot;&gt;&lt;/div&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//unpkg.com/mocha@5.2.0/mocha.css&quot;&gt;
+&lt;script src=&quot;//unpkg.com/mocha@5.2.0/mocha.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//unpkg.com/chai@4.1.2/chai.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;module&quot;&gt;
+import { DefineMap } from &quot;can&quot;;
+
+// Mocha / Chai Setup
+mocha.setup(&quot;bdd&quot;)
+var assert = chai.assert;
+
+let ViewModel = DefineMap.extend({
+    first: &quot;string&quot;,
+    last: &quot;string&quot;,
+    get name() {
+        return `${this.first || &quot;&quot;} ${this.last || &quot;&quot;}`.trim();
+    },
+    setName(val) {
+        const parts = val.split(&quot; &quot;);
+        this.first = parts[0];
+        this.last = parts[1];
+    }
+});
+
+describe(&quot;ViewModel&quot;, () =&gt; {
+    it(&quot;name&quot;, () =&gt; {
+        // #1
+        let vm = new ViewModel({ });
+
+        // #2
+        assert.equal(vm.name, &quot;&quot;, &quot;default `name` is correct&quot;);
+
+        // #3
+        vm.first = &quot;Kevin&quot;
+        // #4
+        assert.equal(vm.name, &quot;Kevin&quot;, &quot;setting `first` updates `name` correctly&quot;);
+
+        // #3
+        vm.last = &quot;McCallister&quot;;
+        // #4
+        assert.equal(vm.name, &quot;Kevin McCallister&quot;, &quot;setting `first` updates `name` correctly&quot;);
+
+        // #3
+        vm.setName(&quot;Marv Merchants&quot;);
+        // #4
+        assert.equal(vm.first, &quot;Marv&quot;, &quot;`setName` updates `first` correctly&quot;);
+        assert.equal(vm.last, &quot;Merchants&quot;, &quot;`setName` updates `last` correctly&quot;);
+    });
+});
+
+// start Mocha
+mocha.run();
+&lt;/script&gt;
+</code></pre>
+<div line-highlight='27-47,only'></div>
+<div class='codepen'></div>
+<h3>Asynchronous behavior</h3>
+<p>Asynchronous behavior is one of the toughest things to test in JavaScript. There are a few techniques that can be used to make it a little easier in CanJS applications.</p>
+<p>The following example uses <code>listenTo</code> to capture the value whenever you type into the <code>&lt;input&gt;</code> element, but it only updates the value of the <code>text</code> property when nothing has been typed for 500ms:</p>
+<div class='demo_wrapper' data-demo-src='demos/testing/throttled-input.html'></div>
+<div class='codepen'></div>
+<p>The difficulty in testing this ViewModel is knowing when to run assertions. One approach to testing this code is:</p>
+<ul>
+<li>Set the <code>text</code> property</li>
+<li>Wait 500ms</li>
+<li>Test that the value of the <code>text</code> property is correct</li>
+</ul>
+<p>This might work initially, but different browsers will not handle this 500ms delay in exactly the same way. Tests using <code>setTimeout</code> like this become very brittle and prone to break as browsers and test environments change. It is very frustrating to write a test and have it start failing six months down the road even though nothing in the code has changed.</p>
+<p>This brittleness can be avoided by using an <a href="https://canjs.com/doc/can-event-queue/map/map.addEventListener.html" title="event listener">event listener</a> instead of <code>setTimeout</code>. Using this technique, the test approach is:</p>
+<ul>
+<li>Set the <code>text</code> property</li>
+<li>Wait for the <code>text</code> property to change</li>
+<li>Test that the value of the <code>text</code> property is correct</li>
+</ul>
+<p>Since the event listener needs to be set up before the the property is changed, in practice this approach becomes:</p>
+<ul>
+<li>Create an event listener for when the <code>text</code> property changes</li>
+<li>Set the <code>text</code> property</li>
+<li>When the event listener is triggered, test that the value of the <code>text</code> property is correct</li>
+</ul>
+<p>Here is how this is done for this example:</p>
+<pre><code class="language-html">&lt;div id=&quot;mocha&quot;&gt;&lt;/div&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//unpkg.com/mocha@5.2.0/mocha.css&quot;&gt;
+&lt;script src=&quot;//unpkg.com/mocha@5.2.0/mocha.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//unpkg.com/chai@4.1.2/chai.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;module&quot;&gt;
+import { DefineMap } from &quot;can&quot;;
+
+// Mocha / Chai Setup
+mocha.setup(&quot;bdd&quot;)
+var assert = chai.assert;
+
+let ViewModel = DefineMap.extend({
+    text: {
+        value({ listenTo, lastSet, resolve }) {
+            let latest = &quot;&quot;,
+                timeoutId = null;
+
+            listenTo(lastSet, (val) =&gt; {
+                latest = val;
+                timeoutId = clearTimeout(timeoutId);
+
+                timeoutId = setTimeout(() =&gt; {
+                    resolve(latest);
+                }, 500);
+            });
+        }
+    }
+});
+
+describe(&quot;ViewModel&quot;, () =&gt; {
+    it(&quot;text&quot;, (done) =&gt; {
+        let vm = new ViewModel({ });
+
+        vm.addEventListener(&quot;text&quot;, () =&gt; {
+            assert.equal(vm.text, &quot;Hi there!&quot;, &quot;text updated correctly&quot;)
+            done();
+        });
+
+        vm.text = &quot;Hi there!&quot;;
+    });
+});
+
+// start Mocha
+mocha.run();
+&lt;/script&gt;
+</code></pre>
+<div line-highlight='32-39,only'></div>
+<div class='codepen'></div>
+<blockquote>
+<p>NOTE: When using Mocha, <a href="https://mochajs.org/#asynchronous-code">testing asynchronous code</a> is accomplished by calling the <code>done</code> callback to indicate the test is complete. Different testing frameworks might have slightly different solutions.</p>
+</blockquote>
+<h3>Properties derived from asynchronous behavior</h3>
+<p>It is often useful to use an <a href="../can-define.types.get.html#Asynchronousvirtualproperties" title="Specify what happens when a certain property is read on a map. get functions
+work like a can-compute and automatically update themselves when a dependent
+observable value is changed.">asynchronous getter</a> to load data from a model or serivce layer. It can be difficult to test this without also testing the model. The getter code might look something like this:</p>
+<pre><code class="language-js">ViewModel: {
+    todoCount: {
+        get(lastSet, resolve) {
+            todoConnection
+                .getList({ })
+                .then((response) =&gt; {
+                    resolve(response.metadata.count);
+                });
+        }
+    }
+}
+</code></pre>
+<p>The primary logic in this code is responsible for reading the <code>metadata.count</code> property from the service layer response and setting it as the <code>todoCount</code> property on the ViewModel. The way this code is written makes it very difficult to test this logic.</p>
+<p>In order to make it easier, first <strong>split</strong> this getter into two properties:</p>
+<ul>
+<li>the promise returned by the Model</li>
+<li>the count property itself</li>
+</ul>
+<pre><code class="language-js">ViewModel: {
+    todoCountPromise: {
+        get() {
+            return todoConnection.getList({ });
+        }
+    },
+
+    todoCount: {
+        get(lastSet, resolve) {
+            this.todoCountPromise.then((response) =&gt; {
+                resolve(response.metadata.count);
+            });
+        }
+    }
+}
+</code></pre>
+<p>Next, make it possible to override the <code>todoCountPromise</code> property by utilizing <a href="../can-define.types.get.html#Propertiesvaluesthatchangewiththeirinternalsetvalue" title="Specify what happens when a certain property is read on a map. get functions
+work like a can-compute and automatically update themselves when a dependent
+observable value is changed.">lastSet</a>:</p>
+<pre><code class="language-js">ViewModel: {
+    todoCountPromise: {
+        get(lastSet) {
+            if (lastSet) {
+                return lastSet;
+            }
+
+            return todoConnection.getList({ });
+        }
+    },
+
+    todoCount: {
+        get(lastSet, resolve) {
+            this.todoCountPromise.then((response) =&gt; {
+                resolve(response.metadata.count);
+            });
+        }
+    }
+}
+</code></pre>
+<div line-highlight='4-6'></div>
+<p>Now this can be tested by setting the default value of <code>todoCountPromise</code> to a promise that <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve">resolves</a> with test data:</p>
+<pre><code class="language-js">let vm = new ViewModel({
+    todoCountPromise: Promise.resolve(todoResponse)
+});
+</code></pre>
+<p>Since this is a default value, the actual model’s <code>getList</code> method will never be called. The <code>todoCount</code> property can then be tested like any other <a href="testing.html#Testingasynchronousbehavior" title="Learn how to test CanJS applications.">asynchronous behavior</a>.</p>
+<pre><code class="language-html">&lt;div id=&quot;mocha&quot;&gt;&lt;/div&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//unpkg.com/mocha@5.2.0/mocha.css&quot;&gt;
+&lt;script src=&quot;//unpkg.com/mocha@5.2.0/mocha.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//unpkg.com/chai@4.1.2/chai.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;module&quot;&gt;
+import { DefineMap } from &quot;can&quot;;
+
+// Mocha / Chai Setup
+mocha.setup(&quot;bdd&quot;)
+var assert = chai.assert;
+
+let ViewModel = DefineMap.extend({
+    todoCountPromise: {
+        get(lastSet) {
+            if (lastSet) {
+                return lastSet;
+            }
+
+            return todoConnection.getList({ });
+        }
+    },
+
+    todoCount: {
+        get(lastSet, resolve) {
+            this.todoCountPromise.then((response) =&gt; {
+                resolve(response.metadata.count);
+            });
+        }
+    }
+});
+
+describe(&quot;ViewModel&quot;, () =&gt; {
+    it(&quot;todoCount&quot;, (done) =&gt; {
+        let todoResponse = {
+            metadata: { count: 150 },
+            data: []
+        };
+
+        let vm = new ViewModel({
+            todoCountPromise: Promise.resolve(todoResponse)
+        });
+
+        vm.addEventListener(&quot;todoCount&quot;, () =&gt; {
+            assert.equal(vm.todoCount, 150, &quot;`todoCount` === 150&quot;);
+            done();
+        });
+    });
+});
+
+// start Mocha
+mocha.run();
+&lt;/script&gt;
+</code></pre>
+<div class='codepen'></div>
+<div line-highlight='34-46,only'></div>
+<p>It is also possible to test this synchronously by setting <code>todoCountPromise</code> to a normal object that <a href="https://en.wikipedia.org/wiki/Duck_typing">has the same methods</a> as a promise, but &quot;resolves&quot; synchronously. This might look like:</p>
+<pre><code class="language-js">let testTodoCountPromise = {
+    then(resolve) {
+        resolve(todoResponse);
+    }
+};
+
+let vm = new ViewModel({
+    todoCountPromise: testTodoCountPromise
+});
+</code></pre>
+<p>With this approach, the assertions can be made outside of the <code>addEventListener</code> callback and there is no need to call <code>done()</code> since this test is now synchronous.</p>
+<blockquote>
+<p>NOTE: Even with this approach, <code>addEventListener</code> still needs to be called; without this, CanJS will not provide the <code>resolve</code> function to the asynchronous getter. This is done to prevent memory leaks.</p>
+</blockquote>
+<pre><code class="language-html">&lt;div id=&quot;mocha&quot;&gt;&lt;/div&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//unpkg.com/mocha@5.2.0/mocha.css&quot;&gt;
+&lt;script src=&quot;//unpkg.com/mocha@5.2.0/mocha.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//unpkg.com/chai@4.1.2/chai.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;module&quot;&gt;
+import { DefineMap } from &quot;can&quot;;
+
+// Mocha / Chai Setup
+mocha.setup(&quot;bdd&quot;)
+var assert = chai.assert;
+
+let ViewModel = DefineMap.extend({
+    todoCountPromise: {
+        get(lastSet) {
+            if (lastSet) {
+                return lastSet;
+            }
+
+            return todoConnection.getList({ });
+        }
+    },
+
+    todoCount: {
+        get(lastSet, resolve) {
+            this.todoCountPromise.then((response) =&gt; {
+                resolve(response.metadata.count);
+            });
+        }
+    }
+});
+
+describe(&quot;ViewModel&quot;, () =&gt; {
+    it(&quot;todoCount&quot;, () =&gt; {
+        let todoResponse = {
+            metadata: { count: 150 },
+            data: []
+        };
+
+        let testTodoCountPromise = {
+            then(resolve) {
+                resolve(todoResponse);
+            }
+        };
+
+        let vm = new ViewModel({
+            todoCountPromise: testTodoCountPromise
+        });
+
+        vm.addEventListener(&quot;todoCount&quot;, () =&gt; {});
+
+        assert.equal(vm.todoCount, 150, &quot;`todoCount` === 150&quot;);
+    });
+});
+
+// start Mocha
+mocha.run();
+&lt;/script&gt;
+</code></pre>
+<div class='codepen'></div>
+<div line-highlight='39-51,only'></div>
+<h3>Properties derived from models (or any imported module)</h3>
+<p>The <a href="testing.html#Propertiesderivedfromasynchronousbehavior" title="Learn how to test CanJS applications.">previous example</a> shows how to test logic that is dependent on a promise returned by a <a href="data.html#Retrievingalistofrecords" title="Learn how to get, create, update, and delete backend service layer data.">getList</a> call. That example did not show how to test that the Model is used correctly.</p>
+<p>Specifically, we did not test:</p>
+<ul>
+<li><code>todoCountPromise</code> calls <code>todoConnection.getList</code></li>
+<li><code>todoCountPromise</code> is the return value of <code>todoConnection.getList</code></li>
+</ul>
+<pre><code class="language-js">import todoConnection from &quot;models/todo&quot;;
+
+let ViewModel = DefineMap.extend({
+    todoCountPromise: {
+        get(lastSet) {
+            return todoConnection.getList({ });
+        }
+    }
+});
+</code></pre>
+<div line-highlight='5-7'></div>
+<p>This could be tested using <a href="../can-fixture.html" title="can-fixture intercepts an AJAX request and simulates the response with a file or function.">can-fixture</a>, but doing this would also test any logic in the <code>todoConnection</code> itself. A unit test of the ViewModel should just test the code in the ViewModel; testing the model should be handled by tests specifically created to test the model and/or in integration tests. Both of these will be discussed later in the guide.</p>
+<p>To test the <code>todoCountPromise</code>, you can store the <code>todoConnection</code> as a property on the ViewModel and then use <code>this.todoConnection</code> instead of the <code>todoConnection</code> that was imported:</p>
+<pre><code class="language-js">import todoConnection from &quot;models/todo&quot;;
+
+let ViewModel = DefineMap.extend({
+    todoConnection: {
+        default() {
+            return todoConnection;
+        }
+    },
+    todoCountPromise: {
+        get(lastSet) {
+            return this.todoConnection.getList({ });
+        }
+    }
+});
+</code></pre>
+<div line-highlight='4-8,11'></div>
+<p>Using this technique allows you to set a new value of <code>todoConnection</code> by passing it as a default value to the ViewModel constructor. You can then test that the <code>getList</code> function was called (as well as test the arguments passed to it) and also test that the getter returned the correct value.</p>
+<pre><code class="language-html">&lt;div id=&quot;mocha&quot;&gt;&lt;/div&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//unpkg.com/mocha@5.2.0/mocha.css&quot;&gt;
+&lt;script src=&quot;//unpkg.com/mocha@5.2.0/mocha.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//unpkg.com/chai@4.1.2/chai.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;module&quot;&gt;
+import { DefineMap } from &quot;can&quot;;
+
+// Mocha / Chai Setup
+mocha.setup(&quot;bdd&quot;)
+var assert = chai.assert;
+
+let ViewModel = DefineMap.extend({
+    todoConnection: {
+        default() {
+            return todoConnection;
+        }
+    },
+    completeFilter: { type: &quot;boolean&quot; },
+    todoCountPromise: {
+        get() {
+            let req = {};
+            let complete = this.completeFilter;
+
+            if (complete != null) {
+                req.complete = complete;
+            }
+
+            return this.todoConnection.getList(req);
+        }
+    }
+});
+
+describe(&quot;ViewModel&quot;, () =&gt; {
+    it(&quot;todoCountPromise&quot;, () =&gt; {
+        let testPromise = new Promise((res, rej) =&gt; {});
+        let getListOptions = null;
+
+        let testTodoConnection = {
+            getList(options) {
+                getListOptions = options;
+                return testPromise;
+            }
+        };
+
+        let vm = new ViewModel({
+            todoConnection: testTodoConnection
+        });
+
+        vm.addEventListener(&quot;todoCountPromise&quot;, () =&gt; {});
+
+        assert.equal(vm.todoCountPromise, testPromise, &quot;todoCountPromise is the promise returned by getList&quot;);
+
+        vm.completeFilter = true;
+        assert.equal(getListOptions.complete, true, &quot;completeFilter: true is passed to getList&quot;)
+
+        vm.completeFilter = false;
+        assert.equal(getListOptions.complete, false, &quot;completeFilter: false is passed to getList&quot;)
+    });
+});
+
+// start Mocha
+mocha.run();
+&lt;/script&gt;
+</code></pre>
+<div class='codepen'></div>
+<div line-highlight='13-17,28,38-43,46,51-57,only'></div>
+<p>This technique is useful for testing code using models, but it can be used to test any code that uses a function or property <em>exported directly</em> from another module.</p>
+
+</section>
+
+  
+
+
+<script type="text/javascript">
+  window.docObject = {"src":{"path":"docs/can-guides/topics/testing.md"},"description":"Learn how to test CanJS applications. \n","name":"guides/testing","title":"Testing","type":"page","parent":"guides/essentials","order":8,"outline":"2","comment":" ","codepen":[["\"can\"","\"//unpkg.com/can@5/core.mjs\""],["\"can/everything\"","\"//unpkg.com/can@5/everything.mjs\""],["\"can/demos/technology-overview/mock-url\"","\"//unpkg.com/mock-url@^5.0.0/mock-url.mjs\""],["\"can/demos/technology-overview/route-mini-app-components\"","\"//unpkg.com/route-mini-app@^5.0.0/components.mjs\""],["return steal.import(","return import("],["\"can/demos/technology-overview/page-login\"","\"//unpkg.com/route-mini-app@^5.0.0/page-login.mjs\""],["`can/demos/technology-overview/page-${this.page}`","`//unpkg.com/route-mini-app@^5.0.0/page-${this.page}.mjs`"]],"pathToRoot":"../.."};
+</script>
+</article>
+      
+        <footer><p>CanJS is part of <a href="https://donejs.com" target="_blank">DoneJS</a>. Created and maintained by the core <a href="https://donejs.com/About.html#team" target="_blank">DoneJS team</a> and <a href="https://www.bitovi.com" target="_blank">Bitovi</a>. <strong>Currently 5.7.0.</strong></p>
+</footer>
+      
+    </div>
+  </div>
+</div>
+<survey-ad>
+  <button aria-label="Close" class="close" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <a href="https://donejs.com/survey.html" target="_blank">
+    Help us improve CanJS by taking our community survey
+  </a>
+</survey-ad>
+
+
+		
+			<script>
+				steal = {
+				  	instantiated: {
+				    	"bundles/bit-docs-site/static.css!$css" : null
+				  	}
+			  	};
+			</script>
+			<script type='text/javascript' data-main="bit-docs-site/static" src="../static/steal.production.js"></script>
+		
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<!-- root-level elements with attributes necessary for the app -->
+		<div path-prefix=".."></div>
+
+	</body>
+</html>
